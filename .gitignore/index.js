@@ -476,7 +476,7 @@ bot.on("message", function(message) {
                                             var heure = a.getHours();
                                             var min = a.getMinutes();
                                             var sec = a.getSeconds();
-                                            var time = " + tarih + ' ' + ay + ' ' + yıl + ' içinde ' + zaman + 'saat' + dakika + ':' + saniye ;
+                                            var time = "le " + tarih + ' ' + ay + ' ' + yıl + ' içinde ' + zaman + 'saat' + dakika + ':' + saniye ;
                                             return time;
                                         }
                                         
