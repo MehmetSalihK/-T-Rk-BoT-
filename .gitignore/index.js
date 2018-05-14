@@ -274,7 +274,7 @@ bot.on("message", function(message) {
 		message.channel.send({embed})
 	}
          break;
-         case "rol":
+         case "rollerim":
          message.delete (30);
       var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
       var day = message.guild.createdAt.getDate()
