@@ -243,7 +243,7 @@ bot.on("message", function(message) {
              .addField("Rolleriniz", message.guild.roles.size, true);
             message.channel.sendMessage(embed);
             break;
-            case "yardim":
+            case "help":
             message.delete (30);
          var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
          var day = message.guild.createdAt.getDate()
@@ -282,7 +282,7 @@ bot.on("message", function(message) {
       var year = message.guild.createdAt.getFullYear()
       var sicon = message.guild.iconURL;
       var embed = new Discord.RichEmbed()
-       .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
+       .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/K0iUSPj.png")
        .setColor(0x00ffff)
        .addField(message.author.username, "Rolum: " + message.member.roles.map(role => role.name).join(" || ")) // user, roles
 	   .setColor(0x00ffff)
