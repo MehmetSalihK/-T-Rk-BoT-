@@ -33,14 +33,6 @@ var bot = new Discord.Client();
 
 var servers = {};
 
-bot.on("guildMemberAdd", member => {
-    member.guild.channels.find("name", "genel").send(`__**${member.guild.name}**__ **server'a Hoşgeldiniz** __**${member.user.username}**__ **bizimle berabersiniz!**`)
-})
-
-bot.on("guildMemberRemove", member => {
-    member.guild.channels.find("name", "genel").send(`__**${member.user.username}**__ **artık bizim sunucumuzda ayrıldı** __**${member.guild.name}**__`)
-})
-
 bot.on('guildMemberAdd', member => {
     var role = member.guild.roles.find("name", "YENI");
     member.addRole(role)
