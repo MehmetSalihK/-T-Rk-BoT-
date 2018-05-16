@@ -1,7 +1,9 @@
 const Discord = require("discord.js");
+const client = new Discord.Client();
 const YTDL = require("ytdl-core");
 
-const TOKEN = "NDQ1NjQxMTU5MjM1MzM4MjQw.DdtbRA.O8V8ZLlhFnPBUJf7fO7zH818qT4";
+
+const TOKEN = "NDI5NzQ1ODg4MTUyNTE4Njcx.DcgpyQ.PyViJfV4Jvfq12kwYYl9aTMCo-E";
 const ownerID = "174565176492687361"
 const PREFIX = "-";
 
@@ -36,8 +38,98 @@ var servers = {};
 bot.on("ready", async () => {
 
 	console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-	bot.user.setActivity("-help", {type: "WATCHING"});
+	bot.user.setActivity("NDNG - Mehmet60 || -help", {type: "WATCHING"});
   
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "Salut") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "salut") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "Wesh") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "wesh") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "Wsh") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "wsh") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "CC") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "cc") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "welcome") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
+});
+
+bot.on("message", function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (message.content == "Welcome") {
+        message.delete (3000);
+        message.reply("Welcome To Do LesFamilles NDNG. :)").then(d_msg => { d_msg.delete(30000); });
+    }
 });
 
 const CLEAR_MESSAGES = '-clearchat';
@@ -52,12 +144,12 @@ bot.on('ready', () => {
         //    2. Check if I have the permission to execute the command
   
         if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
-          message.channel.sendMessage("Üzgünüz, komutu yürütme izniniz yok \""+message.content+"\"");
-          console.log("Üzgünüz, komutu yürütme izniniz yok \""+message.content+"\"");
+          message.channel.sendMessage("Désolé, vous n'avez pas la permission d'exécuter la commande \""+message.content+"\"");
+          console.log("Désolé, vous n'avez pas la permission d'exécuter la commande \""+message.content+"\"");
           return;
         } else if (!message.channel.permissionsFor(bot.user).hasPermission("MANAGE_MESSAGES")) {
-          message.channel.sendMessage("Üzgünüm, komutu yürütme iznim yok \""+message.content+"\"");
-          console.log("Üzgünüm, komutu yürütme iznim yok \""+message.content+"\"");
+          message.channel.sendMessage("Désolé, je n'ai pas la permission d'exécuter la commande \""+message.content+"\"");
+          console.log("Désolé, je n'ai pas la permission d'exécuter la commande \""+message.content+"\"");
           return;
         }
   
@@ -70,11 +162,11 @@ bot.on('ready', () => {
               messagesDeleted = messages.array().length; // number of messages deleted
   
               // Logging the number of messages deleted on both the channel and console.
-              message.channel.sendMessage("Mesajları başarılı bir şekilde silindi. Silinen mesajların toplam sayısı: "+messagesDeleted).then(d_msg => { d_msg.delete(30000); });
-              console.log('Mesajları başarılı bir şekilde silindi. Silinen mesajların toplam sayısı: '+messagesDeleted).then(d_msg => { d_msg.delete(30000); });
+              message.channel.sendMessage("Suppression des messages réussie. Nombre total de messages supprimés: "+messagesDeleted).then(d_msg => { d_msg.delete(30000); });
+              console.log('Suppression des messages réussie. Nombre total de messages supprimés: '+messagesDeleted).then(d_msg => { d_msg.delete(30000); });
             })
             .catch(err => {
-              console.log('Toplu silme sırasında hata oluştu');
+              console.log('Erreur lors de la suppression en bloc');
               console.log(err);
             });
         }
@@ -96,6 +188,17 @@ bot.on("guildMemberAdd", function(member) {
     });
 });
 
+bot.on('guildCreate', (guild) => { // If the Bot was added on a server, proceed
+    if (!guildConf[guild.id]) { // If the guild's id is not on the GUILDCONF File, proceed
+	guildConf[guild.id] = {
+		prefix: config.prefix
+	}
+    }
+     fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
+     	if (err) console.log(err)
+	})
+});
+
 bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
 
@@ -106,16 +209,16 @@ bot.on("message", function(message) {
     switch (args[0].toLowerCase()) {
         case "ping":
         message.delete (30);
-		message.channel.send(`Pong! Zaman aldı: ${Date.now() - message.createdTimestamp} ms`).then(d_msg => { d_msg.delete(9999); });
+		message.channel.send(`Pong! Time took: ${Date.now() - message.createdTimestamp} ms`).then(d_msg => { d_msg.delete(9999); });
             break;
         case "info":
-            message.reply('senin avatarın '+message.author.avatarURL).then(d_msg => { d_msg.delete(8990); });
-            message.reply('kimliğin '+message.author.id).then(d_msg => { d_msg.delete(8990); });
-            message.reply('takma adın '+message.author.username).then(d_msg => { d_msg.delete(8990); });
+            message.reply('ton avatar est '+message.author.avatarURL).then(d_msg => { d_msg.delete(8990); });
+            message.reply('ton id est '+message.author.id).then(d_msg => { d_msg.delete(8990); });
+            message.reply('ton pseudo est '+message.author.username).then(d_msg => { d_msg.delete(8990); });
             break;
         case "8ball":
             if (args[1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
-            else message.channel.sendMessage("Bunu okuyamıyorum");
+            else message.channel.sendMessage("Je ne peux pas lire ça");
             break;
          case "embed":
             var embed = new Discord.RichEmbed()
@@ -129,7 +232,7 @@ bot.on("message", function(message) {
                 .setThumbnail(message.author.avatarURL)
             message.channel.sendMessage(embed);
             break;
-            case "kurallar":
+            case "regle":
             message.delete (30);
          var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
          var day = message.guild.createdAt.getDate()
@@ -137,20 +240,21 @@ bot.on("message", function(message) {
          var year = message.guild.createdAt.getFullYear()
          var sicon = message.guild.iconURL;
          var embed = new Discord.RichEmbed()
-          .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/K0iUSPj.png")
+          .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
           .setColor(0x00ffff)
-          .setDescription("__***:x:YASAK:x:***__")
-          .addField("1. Küfür ne kadar az olursa o kadar memnun oluruz.")
-          .addField("2.Her hangi bir kanal veya discord reklamı yasaktır.")
-          .addField("3.Kavgalarınızı özelden yapınız.")
-          .addField("4.Cinsel paylaşım, kan, vahşet yasaktır.")
-          .addField("5.Oyun hesaplarının, hediyelik eşyaların, oyun materyallerinin vb. Satışı / takası ve tavsiye bağlantılarının paylaşımı yasaktır.")
-          .addField("6. Din, dil, ırk ve siyaset kesinlikle yasaktır.")
-          .addField("7. Spam ve sel yasaktır.")
-          .addField("8. Eğer şarkı, video, fotoğraf, link, ext ... paylaşmak isterseniz linkleri #:camera:clip-video-url-foto || REKLAM YAPMAK BAN SEBEBIDIR.!");
+          .setDescription("__***:x:INTERDIT:x:***__")
+          .addField("1. Moins la malédiction, plus nous sommes heureux.")
+          .addField("2.Faites vos repères en particulier.")
+          .addField("3.Faites vos repères en particulier.")
+          .addField("4. Toute annonce de chaîne ou de discord est interdit.")
+          .addField("5. Le partage sexuel, de sang, de sauvagerie est interdit.")
+          .addField("6. La vente / l'échange de comptes de jeux, de souvenirs, de matériel de jeu, etc., et le partage de liens de référence sont interdits.")
+          .addField("7. La religion, la langue, la race et la politique sont strictement interdites.\n8. Les spams et les inondations sont interdits.")
+          .addField("8. Les spams et les inondations sont interdits.")
+          .addField("9. Si vous voulez partager des chansons, vidéos, photo, liens, ext... vous pouvez partager les liens vers #:camera:clip-video-url-foto || PUBLICITÉ BAN!");
          message.channel.sendMessage(embed).then(d_msg => { d_msg.delete(8990); });
          break;
-         case "kurallaradmin":
+         case "régleadmin":
          message.delete (30);
       var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
       var day = message.guild.createdAt.getDate()
@@ -158,20 +262,100 @@ bot.on("message", function(message) {
       var year = message.guild.createdAt.getFullYear()
       var sicon = message.guild.iconURL;
       var embed = new Discord.RichEmbed()
-       .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/K0iUSPj.png")
+       .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
+       .setColor(0x00ffff)
+       .setDescription("__***:x:INTERDIT:x:***__")
+       .addField("1. Moins la malédiction, plus nous sommes heureux.")
+       .addField("2.Faites vos repères en particulier.")
+       .addField("3.Faites vos repères en particulier.")
+       .addField("4. Toute annonce de chaîne ou de discord est interdit.")
+       .addField("5. Le partage sexuel, de sang, de sauvagerie est interdit.")
+       .addField("6. La vente / l'échange de comptes de jeux, de souvenirs, de matériel de jeu, etc., et le partage de liens de référence sont interdits.")
+       .addField("7. La religion, la langue, la race et la politique sont strictement interdites.\n8. Les spams et les inondations sont interdits.")
+       .addField("8. Les spams et les inondations sont interdits.")
+       .addField("9. Si vous voulez partager des chansons, vidéos, photo, liens, ext... vous pouvez partager les liens vers #:camera:clip-video-url-foto || PUBLICITÉ BAN!");
+      message.channel.sendMessage(embed);
+      break;
+      case "aide":
+         message.delete (30);
+      var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
+      var day = message.guild.createdAt.getDate()
+      var month = 1 + message.guild.createdAt.getMonth()
+      var year = message.guild.createdAt.getFullYear()
+      var sicon = message.guild.iconURL;
+      var embed = new Discord.RichEmbed()
+       .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
+		.setColor(0x00ffff)
+		.setTitle("Liste de commandes:")
+		.addField("Donnera la liste de commande actuelle", "-help")
+		.addField("Voire tu a combien de ping pour le bot", "-ping")
+		.addField("Voire les régles de ce serveur", "-regle")
+		.addField("Voire les réseaux sociaux", "-pub")
+		.addField("Savoire tes info personnel", "-info")
+		.addField("Savoire les info de serveur", "-serveurinfo")
+		.addField("Voire tes Roles #🎖role🎖 ", "-role")
+		.addField("Pour la musique", "m!play [URL]")
+		.addField("Faire une raport a quelqu'un", "-raport")
+		.addField("Supprimer le chat (ADMIN)", "-clearchat")
+		.addField("Va faire dire au bot quelque chose (ADMIN)", "-say [text]")
+		.addField("Va faire dire au bot une annonce et taguer tout le monde (ADMIN)", "-announcement [text]");
+		message.channel.send({embed}).then(d_msg => { d_msg.delete(9999); });
+      break;
+      case "aideadmin":
+         message.delete (30);
+      var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
+      var day = message.guild.createdAt.getDate()
+      var month = 1 + message.guild.createdAt.getMonth()
+      var year = message.guild.createdAt.getFullYear()
+      var sicon = message.guild.iconURL;
+      var embed = new Discord.RichEmbed()
+      .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
+      .setColor(0x00ffff)
+      .setTitle("Liste de commandes: ADMIN")
+      .addField("Donnera la liste de commande actuelle", "-help")
+      .addField("Voire tu a combien de ping pour le bot", "-ping")
+      .addField("Voire les régles de ce serveur", "-regle")
+      .addField("Voire les réseaux sociaux", "-pub")
+      .addField("Savoire tes info personnel", "-info")
+      .addField("Savoire les info de serveur", "-serveurinfo")
+      .addField("Voire tes Roles #🎖role🎖", "-role")
+      .addField("Pour la musique", "m!play [URL]")
+      .addField("Faire une raport a quelqu'un", "-raport")
+      .addField("Supprimer le chat (ADMIN)", "-clearchat")
+      .addField("Va faire dire au bot quelque chose (ADMIN)", "-say [text]")
+      .addField("Va faire dire au bot une annonce et taguer tout le monde (ADMIN)", "-announcement [text]");
+      message.channel.send({embed}).then(d_msg => { d_msg.delete(9999); });
+      break;
+            case "pub":
+            message.delete (30);
+         var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
+         var day = message.guild.createdAt.getDate()
+         var month = 1 + message.guild.createdAt.getMonth()
+         var year = message.guild.createdAt.getFullYear()
+         var sicon = message.guild.iconURL;
+         var embed = new Discord.RichEmbed()
+          .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
           .setColor(0x00ffff)
-          .setDescription("__***:x:YASAK:x:***__")
-          .addField("1. Küfür ne kadar az olursa o kadar memnun oluruz.")
-          .addField("2.Her hangi bir kanal veya discord reklamı yasaktır.")
-          .addField("3.Kavgalarınızı özelden yapınız.")
-          .addField("4.Cinsel paylaşım, kan, vahşet yasaktır.")
-          .addField("5.Oyun hesaplarının, hediyelik eşyaların, oyun materyallerinin vb. Satışı / takası ve tavsiye bağlantılarının paylaşımı yasaktır.")
-          .addField("6. Din, dil, ırk ve siyaset kesinlikle yasaktır.")
-          .addField("7. Spam ve sel yasaktır.")
-          .addField("8. Eğer şarkı, video, fotoğraf, link, ext ... paylaşmak isterseniz linkleri #:camera:clip-video-url-foto || REKLAM YAPMAK BAN SEBEBIDIR.!");
+          .setDescription("__***<:verified:436604647268941834>LFN PUBLICITÉ***__")
+          .addField("__```Youtube:```__",
+    "https://goo.gl/RQZ6ZA")
+          .addField("__```Instagram:```__",
+    "https://goo.gl/Jex2aU")
+    .addField("__```Snapchat:```__",
+    "https://goo.gl/c1QtT9")
+    .addField("__```Twitch:```__",
+    "https://goo.gl/yLkmpL")
+    .addField("__```Facebook Groupe:```__",
+    "https://goo.gl/1Co2hL")
+    .addField("__```Discord:```__",
+    "https://goo.gl/rwu1wK")
+    .addField("__```LfNBoT:```__",
+    "https://goo.gl/gSGYa3")
+    .addField("__```TeamSpeak:```__",
+    "https://goo.gl/Mvdx8d")
          message.channel.sendMessage(embed).then(d_msg => { d_msg.delete(8990); });
          break;
-      case "yardim":
+    case "publicitéadmin":
          message.delete (30);
       var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
       var day = message.guild.createdAt.getDate()
@@ -179,47 +363,28 @@ bot.on("message", function(message) {
       var year = message.guild.createdAt.getFullYear()
       var sicon = message.guild.iconURL;
       var embed = new Discord.RichEmbed()
-       .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/K0iUSPj.png")
-		.setColor(0x00ffff)
-		.setTitle("Emirlerin listesi:")
-		.addField("Mevcut sipariş listesini verecek", "-help")
-		.addField("Botun kaç tane ping olduğunu görün", "-ping")
-		.addField("Bu sunucunun kurallarına bakın", "-kurallar")
-		.addField("Kişisel bilgilerinizi bilin", "-info")
-		.addField("Sunucu bilgisine bakın", "-serverinfo")
-		.addField("Rollerini gör", "-rollerim")
-		.addField("Müzik için", "-turkplay [URL/Şarkı Adı]")
-		.addField("Birisine report ed", "-report")
-		.addField("Chat'i sil (ADMIN)", "-clearchat")
-		.addField("Bot bir şeyler söyler (ADMIN)", "-say [yazı]")
-		.addField("Bir reklamı söylemek ve herkesi etiketlemek için botu alacak (ADMIN)", "-önemli [yazı]");
-		message.channel.send({embed}).then(d_msg => { d_msg.delete(9999); });
+       .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
+       .setColor(0x00ffff)
+       .setDescription("__***<:verified:436604647268941834>LFN PUBLICITÉ***__")
+       .addField("__```Youtube:```__",
+ "https://goo.gl/RQZ6ZA")
+       .addField("__```Instagram:```__",
+ "https://goo.gl/Jex2aU")
+ .addField("__```Snapchat:```__",
+ "https://goo.gl/c1QtT9")
+ .addField("__```Twitch:```__",
+ "https://goo.gl/yLkmpL")
+ .addField("__```Facebook Groupe:```__",
+ "https://goo.gl/1Co2hL")
+ .addField("__```Discord:```__",
+ "https://goo.gl/rwu1wK")
+ .addField("__```LfNBoT:```__",
+ "https://goo.gl/gSGYa3")
+ .addField("__```TeamSpeak:```__",
+ "https://goo.gl/Mvdx8d")
+      message.channel.sendMessage(embed);
       break;
-      case "yardimadmin":
-         message.delete (30);
-      var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
-      var day = message.guild.createdAt.getDate()
-      var month = 1 + message.guild.createdAt.getMonth()
-      var year = message.guild.createdAt.getFullYear()
-      var sicon = message.guild.iconURL;
-      var embed = new Discord.RichEmbed()
-      .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/K0iUSPj.png")
-		.setColor(0x00ffff)
-		.setTitle("Emirlerin listesi:")
-		.addField("Mevcut sipariş listesini verecek", "-help")
-		.addField("Botun kaç tane ping olduğunu görün", "-ping")
-		.addField("Bu sunucunun kurallarına bakın", "-kurallar")
-		.addField("Kişisel bilgilerinizi bilin", "-info")
-		.addField("Sunucu bilgisine bakın", "-serverinfo")
-		.addField("Rollerini gör", "-rollerim")
-		.addField("Müzik için", "-turkplay [URL/Şarkı Adı]")
-		.addField("Birisine report ed", "-report")
-		.addField("Chat'i sil (ADMIN)", "-clearchat")
-		.addField("Bot bir şeyler söyler (ADMIN)", "-say [yazı]")
-		.addField("Bir reklamı söylemek ve herkesi etiketlemek için botu alacak (ADMIN)", "-önemli [yazı]");
-		message.channel.send({embed}).then(d_msg => { d_msg.delete(9999); });
-      break;
-        case "serverinfo":
+        case "serveurinfo":
                message.delete (30);
             var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
             var day = message.guild.createdAt.getDate()
@@ -228,19 +393,19 @@ bot.on("message", function(message) {
             var sicon = message.guild.iconURL;
             var embed = new Discord.RichEmbed()
              .setAuthor(message.guild.name, sicon)
-             .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/K0iUSPj.png")
+             .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
              .setColor("0x00ffff")
              .setThumbnail(sicon)
-             .addField("Kimlik", message.guild.id, true)
-             .addField("Sunucu adı", message.guild.name, true)
-             .addField("Kullanıcı adın", message.guild.owner.user.tag, true)
-             .addField("Bölge", message.guild.region, true)
-             .addField("Server", message.guild.channels.size, true)
-             .addField("Insanlar/Botlar", message.guild.memberCount, true)
-             .addField("Insanlar", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
-             .addField("Botlar", message.guild.members.filter(m => m.user.bot).size, true)
-             .addField("Çevrim içi", online.size, true)
-             .addField("Rolleriniz", message.guild.roles.size, true);
+             .addField("ID", message.guild.id, true)
+             .addField("prénom", message.guild.name, true)
+             .addField("Owner", message.guild.owner.user.tag, true)
+             .addField("Région", message.guild.region, true)
+             .addField("Chaînes", message.guild.channels.size, true)
+             .addField("Membres", message.guild.memberCount, true)
+             .addField("Humains", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
+             .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true)
+             .addField("En ligne", online.size, true)
+             .addField("Les rôles", message.guild.roles.size, true);
             message.channel.sendMessage(embed);
             break;
             case "help":
@@ -252,17 +417,17 @@ bot.on("message", function(message) {
          var sicon = message.guild.iconURL;
          var embed = new Discord.RichEmbed()
          .setAuthor("[ADMIN]" + message.author.username + "[ADMIN]", "https://imgur.com/hd1v8Pr.png")
-          .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/K0iUSPj.png")
+          .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
           .setColor(0x00ffff)
-          .setDescription("__***:heavy_check_mark::red_circle:SUNUCU'YA HOŞGELDİNİZ:red_circle::heavy_check_mark:***__")
-          .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/K0iUSPj.png")
+          .setDescription("__***:heavy_check_mark::red_circle:BIENVENUE A NOTRE SERVEUR:red_circle::heavy_check_mark:***__")
+          .setFooter(" Pour la commande d'aide [-aide]", "https://imgur.com/rAgsGxu.png")
           .setImage("https://imgur.com/StHMUDI.png")
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
-  .setURL("")
-  .addField("__```☪TüRk-BoT☪ davet etmek için:```__",
-	"https://goo.gl/Yrbvid")
-    .addField("__```Sunucuya katılmak için:```__", "https://goo.gl/xREjkN", true);
+  .setURL("https://www.youtube.com/user/parislikuscu")
+  .addField("__```Invite lfnbot:```__",
+	"https://goo.gl/gSGYa3")
+    .addField("__```Join server:```__", "https://goo.gl/rwu1wK", true);
          message.channel.sendMessage(embed).then(d_msg => { d_msg.delete(8990); });
          break;
             case "say":
@@ -270,11 +435,11 @@ bot.on("message", function(message) {
 	if (message.member.hasPermission("ADMINISTRATOR")) {
         const embed = new Discord.RichEmbed()
 		.setColor(0x00ffff)
-		.setDescription(message.author.username + " diyorki: " + args.join(" "));
+		.setDescription(message.author.username + " dit: " + args.join(" "));
 		message.channel.send({embed})
 	}
          break;
-         case "rollerim":
+         case "role":
          message.delete (30);
       var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
       var day = message.guild.createdAt.getDate()
@@ -282,14 +447,14 @@ bot.on("message", function(message) {
       var year = message.guild.createdAt.getFullYear()
       var sicon = message.guild.iconURL;
       var embed = new Discord.RichEmbed()
-       .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/K0iUSPj.png")
+       .setFooter(` Pour la commande d'aide [-aide] • ${day}.${month}.${year} `, "https://imgur.com/rAgsGxu.png")
        .setColor(0x00ffff)
-       .addField(message.author.username, "Rolum: " + message.member.roles.map(role => role.name).join(" || ")) // user, roles
+       .addField(message.author.username, "Roles: " + message.member.roles.map(role => role.name).join(" || ")) // user, roles
 	   .setColor(0x00ffff)
 	   .setThumbnail(message.author.avatarURL)
       message.channel.sendMessage(embed);
       break;
-         case "önemli":
+         case "announcement":
          message.delete()
          if (message.member.hasPermission("ADMINISTRATOR")) {
             const color = args[0]
@@ -299,7 +464,7 @@ bot.on("message", function(message) {
             //const colour = args.slice(2).join("");
             const embed = new Discord.RichEmbed()
             .setColor("0x" + color)
-            .setTitle("Önemli duyuru:")
+            .setTitle("Important Announcement:")
             .setDescription(text);
             message.channel.send("@everyone")
             message.channel.send({embed})
@@ -316,7 +481,7 @@ bot.on("message", function(message) {
             message.member.guild.roles.find("name", "NewDayNewGame").delete();
             message.channel.sendMessage("delet");
             break;
-        case "playn":
+        case "play":
             if (!args[1]) {
                 message.channel.sendMessage("S'il vous plaît fournir un lien");
                 return;
@@ -339,10 +504,76 @@ bot.on("message", function(message) {
                 play(connection, message);
             });
             break;
-        case "skipn":
+        case "kick":
+            if (!message.member.roles.some(r=>["🔲BoT-Admin🔲"].includes(r.name)) ) return message.reply("Désolé, vous n'avez pas la permission de le faire!"); // if author has no perms
+            var kickedmember = message.mentions.members.first(); // sets the mentioned user to the var kickedmember
+            if (!kickedmember) return message.reply("Veuillez mentionner un(e) personne valide de ce serveur!") // if there is no kickedmmeber var
+            if (!kickedmember.kickable) return message.reply("Je ne peux pas kick cette personne!") // if the member is unkickable
+            var kickreasondelete = 10 + kickedmember.user.id.length //sets the length of the kickreasondelete
+            var kickreason = message.content.substring(kickreasondelete).split(" "); // deletes the first letters until it reaches the reason
+            var kickreason = kickreason.join(" "); // joins the list kickreason into one line
+            if (!kickreason) return message.reply("Veuillez indiquer une raison pour le coup de pied!") // if no reason
+            kickedmember.kick(kickreason) //if reason, kick
+                .catch(error => message.reply(`Je suis désoler @${message.author} Je ne pouvais pas te kicker mais à cause de : ${error}`)); //if error, display error
+            message.reply(`${kickedmember.user.username} a été kick par ${message.author.username} car: ${kickreason}`); // sends a message saying he was kicked
+            break;
+        case "skip":
             var server = servers[message.guild.id];
 
             if (server.dispatcher) server.dispatcher.end();
+            break;
+        case "mute":
+            if (!message.member.roles.some(r=>["🔲BoT-Admin🔲"].includes(r.name)) ) return message.reply("Désolé, vous n'avez pas la permission de le faire!"); // if author has no perms
+            var mutedmember = message.mentions.members.first(); // sets the mentioned user to the var kickedmember
+            if (!mutedmember) return message.reply("Veuillez mentionner un membre valide de ce serveur!") // if there is no kickedmmeber var
+            if (mutedmember.hasPermission("ADMINISTRATOR")) return message.reply("Je ne peux pas mute cette personne!") // if memebr is an admin
+            var mutereasondelete = 10 + mutedmember.user.id.length //sets the length of the kickreasondelete
+            var mutereason = message.content.substring(mutereasondelete).split(" "); // deletes the first letters until it reaches the reason
+            var mutereason = mutereason.join(" "); // joins the list kickreason into one line
+            if (!mutereason) return message.reply("Veuillez indiquer une raison pour mettre mute!") // if no reason
+            mutedmember.addRole(mutedrole) //if reason, kick
+                .catch(error => message.reply(`Je suis désoler ${message.author} Je ne pouvais pas mettre mutte mais à cause de : ${error}`)); //if error, display error
+            message.reply(`${mutedmember.user} a été coupé par ${message.author} car: ${mutereason}`); // sends a message saying he was kicked
+            break;
+        case "ummute":
+            if (!message.member.roles.some(r=>["🔲BoT-Admin🔲"].includes(r.name)) ) return message.reply("Sorry, you do not have the permission to do this!"); // if author has no perms
+            var unmutedmember = message.mentions.members.first(); // sets the mentioned user to the var kickedmember
+            if (!unmutedmember) return message.reply("Veuillez mentionner un(e) personne valide de ce serveur!") // if there is no kickedmmeber var
+            unmutedmember.removeRole(mutedrole) //if reason, kick
+                .catch(error => message.reply(`Je suis désoler ${message.author} Je ne pouvais pas mettre démmute mais à cause de : ${error}`)); //if error, display error
+            message.reply(`${unmutedmember.user} a été découpé par ${message.author}!`); // sends a message saying he was kicked
+            break;
+        case "vote":
+            const user = message.author.username
+            let vote = args.slice(0).join(" ");
+            message.channel.send(`${vote}`)
+            .then(function (message) {
+              message.react("✅")
+              message.react("⛔")
+             }).catch(function() {
+          })
+            break;
+        case "purge":
+            let messagecount = parseInt(args[1]) || 1;
+    
+            var deletedMessages = -1;
+    
+            message.channel.fetchMessages({limit: Math.min(messagecount + 1, 100)}).then(messages => {
+                messages.forEach(m => {
+                    if (m.author.id == bot.user.id) {
+                        m.delete().catch(console.error);
+                        deletedMessages++;
+                    }
+                });
+            }).then(() => {
+                    if (deletedMessages === -1) deletedMessages = 0;
+                    message.channel.send(`:white_check_mark: Purgé \`${deletedMessages}\` messages.`)
+                        .then(m => m.delete(2000));
+            }).catch(console.error);
+            break;
+        case "invite":
+        message.channel.send('Invitez-moi sur votre serveur! https://discordapp.com/oauth2/authorize?client_id=427154733019430914&scope=bot&permissions=3173377');
+          commandIssued = true;
             break;
         case "shop":
             var server = servers[message.guild.id];
@@ -352,7 +583,6 @@ bot.on("message", function(message) {
         }
         
     });
-
 
     bot.on("message", (message) => {
 	
@@ -379,7 +609,7 @@ bot.on("message", function(message) {
                 if(message.author.bot === false)
                 {
                     // Nom d'utilisateur pas entré = afficher l'aide
-                    message.reply("**Rapor etmek için yardım :** \n\n Uygunsuz davranışa sahip bir veya daha fazla kullanıcıyı rapor etmek için, rapor komutundan sonra kullanıcıların adını veya adlarını koyun. \n\n belirli birini ve nedeni de ekleyebilirsiniz `-r:\"Sebebin\"`. \n\n Bu komutu tamamen kötüye kullanmayın, teşekkürler :wink: ! \n\n **Örnek 1 :** `!report @kullanıcı` \n **Örnek 2 :** `!report @kullanıcı1 @kullanıcı2` \n **Örnek 3 :** `!report @kullanıcı1 -r:\"Bir sebep\"`");
+                    message.reply("**Aide pour la commande report :** \n\n Pour rapporter un ou plusieurs utilisateurs ayant un comportement inapproprié, mettre le nom ou les noms des utilisateurs après la commande report. \n\n Vous pouvez également rajouter une raison particulière avec l'attribut `-r:\"Votre raison\"`. \n\n Ne vous amusez pas à abuser cette commande à tout va, merci :wink: ! \n\n **Exemple 1 :** `!report @user` \n **Exemple 2 :** `!report @user1 @user2` \n **Exemple 3 :** `!report @user1 -r:\"Une raison\"`");
                 }
             }
             else
@@ -476,7 +706,7 @@ bot.on("message", function(message) {
                                             var heure = a.getHours();
                                             var min = a.getMinutes();
                                             var sec = a.getSeconds();
-                                            var time = "le " + tarih + ' ' + ay + ' ' + yıl + ' içinde ' + zaman + 'saat' + dakika + ':' + saniye ;
+                                            var time = "le " + date + ' ' + mois + ' ' + annee + ' à ' + heure + 'h' + min + ':' + sec ;
                                             return time;
                                         }
                                         
@@ -488,12 +718,12 @@ bot.on("message", function(message) {
                                             MP = MP + "@" + user.username + " ";
                                         });
                                         
-                                        MP =  MP + "sur *" + member.guild.name + "/" + message.channel.name + "*";
+                                        MP =  MP + "sur *" + member.guild.name + "/" + message.channel.name + "bot";
                                         
                                         // Prise en charge de la raison du signalement
                                         if(raisonSignalement != null)
                                         {
-                                            MP = MP + " pour la raison suivante : *" + raisonSignalement + "*";
+                                            MP = MP + " pour la raison suivante : *" + raisonSignalement + "bot";
                                         }
                                         
                                         try
@@ -511,7 +741,173 @@ bot.on("message", function(message) {
                         
                         if(sontAvertis == true)
                         {
-                            message.reply("Raporlama bitti hayirli urlu olsun :wink: !");
+                            message.reply("Signalement effectué :wink: !");
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    bot.on("message", (message) => {
+	
+        /*
+            Object message :
+            
+            - mentions.users = utilisateurs mentionnés
+            - author.username = auteur du message
+            - content = contenu du message
+            - createdTimestamp = timestamp du message
+            - member.guild.name = nom du serveur
+            - channel.name = nom du topic
+            - channel.topic = description du topic
+            - channel.guild.roles = rôles sur le serveur
+        */
+        
+        if(message.content.substring(0, 7) == "-raport")
+        {
+            message.delete (30);
+            var commande = message.content.split(" ");
+            
+            if(typeof commande[1] === 'undefined')
+            {
+                if(message.author.bot === false)
+                {
+                    // Nom d'utilisateur pas entré = afficher l'aide
+                    message.reply("**Aide pour la commande report :** \n\n Pour rapporter un ou plusieurs utilisateurs ayant un comportement inapproprié, mettre le nom ou les noms des utilisateurs après la commande report. \n\n Vous pouvez également rajouter une raison particulière avec l'attribut `-r:\"Votre raison\"`. \n\n Ne vous amusez pas à abuser cette commande à tout va, merci :wink: ! \n\n **Exemple 1 :** `!report @user` \n **Exemple 2 :** `!report @user1 @user2` \n **Exemple 3 :** `!report @user1 -r:\"Une raison\"`").then(d_msg => { d_msg.delete(8990); });
+                }
+            }
+            else
+            {
+                // Vérifier les noms + raison de signalement
+                var verifNom = true;
+                var raisonSignalement = null;
+                var inOptionRaison = false;
+                
+                for(var i = 1; i < commande.length; i++)
+                {
+                    // Les noms des personnes citées commencent par "<", le caractère suivant étant @
+                    if(commande[i].charAt(1) !== "@")
+                    {
+                        message.delete (30);
+                        // On ne prend pas en compte l'option -r (raison)
+                        if(commande[i].substring(0, 4) == "-r:\"")
+                        {
+                            raisonSignalement = commande[i].substring(3);
+                            inOptionRaison = true;
+                        }
+                        else
+                        {
+                            if(inOptionRaison == false)
+                            {	
+                                verifNom = false;
+                            }
+                            else
+                            {
+                                raisonSignalement = raisonSignalement + " " + commande[i];
+                            }
+                        }
+                    }
+                }
+                
+                if(verifNom === true)
+                {
+                    // Vérification des abus
+                    var aAppele = false;
+                    for(var i = 0; i < dernierAppel.length; i++)
+                    {
+                        if(dernierAppel[i][0] == message.author.id)
+                        {
+                            // Un signalement toutes les 3 minutes autorisé
+                            if((message.createdTimestamp - dernierAppel[i][1]) < 180000)
+                            {
+                                aAppele = true;
+                            }
+                            else
+                            {
+                                aAppele = false;
+                                dernierAppel.splice(i, 1);
+                            }
+                        }
+                    }
+                    
+                    if(aAppele == false)
+                    {
+                        dernierAppel.push([message.author.id, message.createdTimestamp]).then(d_msg => { d_msg.delete(8990); });
+                        
+                        var moderateurs = new Array();
+                        
+                        var sontAvertis = true;
+                        
+                        message.channel.guild.roles.forEach(function(role)
+                        {
+                            // Chercher les modérateurs parmi tous les rôles
+                            
+                            if (role.hasPermission('BAN_MEMBERS'))
+                            {
+                                role.members.forEach(function(member)
+                                {
+                                    var estDejaPrevenu = false;
+                                    for(var j = 0; j < moderateurs.length; j++)
+                                    {
+                                        if(member == moderateurs[j])
+                                        {
+                                            // Est déjà prévenu
+                                            estDejaPrevenu = true;
+                                        }
+                                    }
+                                        
+                                    if(estDejaPrevenu == false)
+                                    {
+                                        moderateurs.push(member);
+                                    
+                                        // Fonction conversion timestamp -> Date
+                                        function timeConverter(timestamp)
+                                        {
+                                            var a = new Date(timestamp);
+                                            var tabMois = ['Janv.','Févr.','Mars','Avri.','Mai.','Juin','Juil.','Août','Sept.','Octo.','Nove.','Déce.'];
+                                            var annee = a.getFullYear();
+                                            var mois = tabMois[a.getMonth()];
+                                            var date = a.getDate();
+                                            var heure = a.getHours();
+                                            var min = a.getMinutes();
+                                            var sec = a.getSeconds();
+                                            var time = "le " + date + ' ' + mois + ' ' + annee + ' à ' + heure + 'h' + min + ':' + sec ;
+                                            return time;
+                                        }
+                                        
+                                        // Reporter les utilisateurs
+                                        var MP = "Un rapport soumis " + timeConverter(message.createdTimestamp) + " par **" + message.author.username + "** a été effectué à l'encontre de ";
+                                        
+                                        message.mentions.users.forEach(function(user)
+                                        {
+                                            MP = MP + "@" + user.username + " ";
+                                        });
+                                        
+                                        MP =  MP + "sur *" + member.guild.name + "/" + message.channel.name + "bot";
+                                        
+                                        // Prise en charge de la raison du signalement
+                                        if(raisonSignalement != null)
+                                        {
+                                            MP = MP + " pour la raison suivante : *" + raisonSignalement + "bot";
+                                        }
+                                        
+                                        try
+                                        {
+                                            member.user.sendMessage(MP);
+                                        }
+                                        catch(e)
+                                        {
+                                            sontAvertis = false;
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                        
+                        if(sontAvertis == true)
+                        {
+                            message.reply("Signalement effectué :wink: !").then(d_msg => { d_msg.delete(8990); });
                         }
                     }
                 }
