@@ -150,7 +150,7 @@ bot.on("message", function(message) {
          var year = message.guild.createdAt.getFullYear()
          var sicon = message.guild.iconURL;
          var embed = new Discord.RichEmbed()
-          .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/OqxFuV3png")
+          .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/w0z6lI3.png")
           .setColor(0x00ffff)
           .setDescription("__***:x:YASAK:x:***__")
           .addField("1. Küfür ne kadar az olursa o kadar memnun oluruz.")
@@ -171,7 +171,7 @@ bot.on("message", function(message) {
       var year = message.guild.createdAt.getFullYear()
       var sicon = message.guild.iconURL;
       var embed = new Discord.RichEmbed()
-      .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/OqxFuV3png")
+      .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/w0z6lI3.png")
 		.setColor(0x00ffff)
 		.setTitle("Emirlerin listesi:")
 		.addField("Mevcut listesini verecek", "-help")
@@ -195,7 +195,7 @@ bot.on("message", function(message) {
       var year = message.guild.createdAt.getFullYear()
       var sicon = message.guild.iconURL;
       var embed = new Discord.RichEmbed()
-      .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/OqxFuV3png")
+      .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/w0z6lI3.png")
 		.setColor(0x00ffff)
 		.setTitle("Emirlerin listesi:")
 		.addField("Mevcut listesini verecek", "-help")
@@ -220,7 +220,7 @@ bot.on("message", function(message) {
             var sicon = message.guild.iconURL;
             var embed = new Discord.RichEmbed()
              .setAuthor(message.guild.name, sicon)
-             .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/OqxFuV3png")
+             .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/w0z6lI3.png")
              .setColor("0x00ffff")
              .setThumbnail(sicon)
              .addField("Kimlik", message.guild.id, true)
@@ -244,10 +244,10 @@ bot.on("message", function(message) {
          var sicon = message.guild.iconURL;
          var embed = new Discord.RichEmbed()
          .setAuthor("[ADMIN]" + message.author.username + "[ADMIN]", "https://imgur.com/hd1v8Pr.png")
-         .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/OqxFuV3png")
+         .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/w0z6lI3.png")
           .setColor(0x00ffff)
           .setDescription("__***:heavy_check_mark::red_circle:SUNUCUNUMUZA HOŞGELDİNİZ:red_circle::heavy_check_mark:***__")
-          .setFooter(" Yardım için [-yardim] ", "https://imgur.com/OqxFuV3png")
+          .setFooter(" Yardım için [-yardim] ", "https://imgur.com/w0z6lI3.png")
           .setImage("")
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
@@ -274,7 +274,7 @@ bot.on("message", function(message) {
       var year = message.guild.createdAt.getFullYear()
       var sicon = message.guild.iconURL;
       var embed = new Discord.RichEmbed()
-      .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/OqxFuV3png")
+      .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/w0z6lI3.png")
        .setColor(0x00ffff)
        .addField(message.author.username, "Rollerim: " + message.member.roles.map(role => role.name).join(" || ")) // user, roles
 	   .setColor(0x00ffff)
