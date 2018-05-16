@@ -251,7 +251,7 @@ bot.on("message", function(message) {
           .setImage("")
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
-  .setURL("")
+  .setURL("https://imgur.com/ASDHxjF.png")
   .addField("__```Davet ☪TüRk-BoT☪:```__",
 	"https://goo.gl/MhDpGn")
     .addField("__```Serverumuza katıl:```__", "https://goo.gl/eyLuNc", true);
