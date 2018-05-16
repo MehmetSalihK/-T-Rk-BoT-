@@ -248,7 +248,7 @@ bot.on("message", function(message) {
           .setColor(0x00ffff)
           .setDescription("__***:heavy_check_mark::red_circle:SUNUCUNUMUZA HOŞGELDİNİZ:red_circle::heavy_check_mark:***__")
           .setFooter(" Yardım için [-yardim] ", "https://imgur.com/w0z6lI3.png")
-          .setImage("")
+          .setImage("https://imgur.com/ASDHxjF.png")
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
   .setURL("https://imgur.com/ASDHxjF.png")
