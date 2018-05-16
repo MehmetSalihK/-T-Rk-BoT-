@@ -548,8 +548,8 @@ bot.on("message", function(message) {
             let vote = args.slice(0).join(" ");
             message.channel.send(`${vote}`)
             .then(function (message) {
-              message.react("✅")
               message.react("⛔")
+              message.react("✅")
              }).catch(function() {
           })
             break;
