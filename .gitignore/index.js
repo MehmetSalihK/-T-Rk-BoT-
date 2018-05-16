@@ -33,11 +33,6 @@ var bot = new Discord.Client();
 
 var servers = {};
 
-bot.on('guildMemberAdd', member => {
-    var role = member.guild.roles.find("name", "YENI");
-    member.addRole(role)
-})
-
 bot.on("ready", async () => {
 
 	console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
