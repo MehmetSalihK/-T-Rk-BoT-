@@ -297,7 +297,15 @@ bot.on("message", function(message) {
 				
             });
             message.delete()
-			return message.reply("Izniniz yok.")
+			if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
+                message.channel.sendMessage("Üzgünüz, komutu yürütme izniniz yok");
+                console.log("Üzgünüz, komutu yürütme izniniz yok");
+                return;
+              } else if (!message.channel.permissionsFor(bot.user).hasPermission("MANAGE_MESSAGES")) {
+                message.channel.sendMessage("Üzgünüm, komutu yürütme iznim yok");
+                console.log("Üzgünüm, komutu yürütme iznim yok");
+                return;
+              }
       break;
          case "önemli":
          message.delete()
