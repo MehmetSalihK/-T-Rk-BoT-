@@ -281,6 +281,24 @@ bot.on("message", function(message) {
 	   .setThumbnail(message.author.avatarURL)
       message.channel.sendMessage(embed);
       break;
+      case "oy":
+         message.delete (30);
+         let args = message.content.split(" ").slice(1);
+         let thingToEcho = args.join(" ")
+         var embed = new Discord.RichEmbed()
+         .addField(thingToEcho, ":white_check_mark: veya :x: Ile yanıtla")
+         .setColor("0xB40404")
+         .setTimestamp()
+				message.channel.sendEmbed(embed)
+			.then(function (message){
+				message.react("✅")
+				message.react("⛔")
+			}).catch(function(){
+				
+            });
+            message.delete()
+			return message.reply("Izniniz yok.")
+      break;
          case "önemli":
          message.delete()
          if (message.member.hasPermission("ADMINISTRATOR")) {
@@ -302,15 +320,15 @@ bot.on("message", function(message) {
             break;
         case "removerole":
             message.channel.sendMessage("removed");
-            message.member.removeRole(message.member.guild.roles.find("name", "NewDayNewGame"));
+            message.member.removeRole(message.member.guild.roles.find("name", "YENI"));
             break;
         case "deleterole":
-            message.member.guild.roles.find("name", "NewDayNewGame").delete();
+            message.member.guild.roles.find("name", "YENI").delete();
             message.channel.sendMessage("delet");
             break;
         case "playst":
             if (!args[1]) {
-                message.channel.sendMessage("S'il vous plaît fournir un lien");
+                message.channel.sendMessage("Lütfen bir bağlantı sağlayın");
                 return;
             }
 
@@ -333,15 +351,15 @@ bot.on("message", function(message) {
             break;
         case "kick":
             var kickedmember = message.mentions.members.first(); // sets the mentioned user to the var kickedmember
-            if (!kickedmember) return message.reply("Veuillez mentionner un(e) personne valide de ce serveur!") // if there is no kickedmmeber var
-            if (!kickedmember.kickable) return message.reply("Je ne peux pas kick cette personne!") // if the member is unkickable
+            if (!kickedmember) return message.reply("Lütfen bu sunucudan geçerli bir kişiden bahset!") // if there is no kickedmmeber var
+            if (!kickedmember.kickable) return message.reply("Bu kişiyi tekmelemem!") // if the member is unkickable
             var kickreasondelete = 10 + kickedmember.user.id.length //sets the length of the kickreasondelete
             var kickreason = message.content.substring(kickreasondelete).split(" "); // deletes the first letters until it reaches the reason
             var kickreason = kickreason.join(" "); // joins the list kickreason into one line
-            if (!kickreason) return message.reply("Veuillez indiquer une raison pour le coup de pied!") // if no reason
+            if (!kickreason) return message.reply("Lütfen vuruş için bir neden belirtin!") // if no reason
             kickedmember.kick(kickreason) //if reason, kick
-                .catch(error => message.reply(`Je suis désoler @${message.author} Je ne pouvais pas te kicker mais à cause de : ${error}`)); //if error, display error
-            message.reply(`${kickedmember.user.username} a été kick par ${message.author.username} car: ${kickreason}`); // sends a message saying he was kicked
+                .catch(error => message.reply(`Üzgünüm @${message.author} seni tekmeleyemedim ama : ${error}`)); //if error, display error
+            message.reply(`${kickedmember.user.username} tarafından atıldı ${message.author.username} cunku: ${kickreason}`); // sends a message saying he was kicked
             break;
         case "skipst":
             var server = servers[message.guild.id];
@@ -369,12 +387,12 @@ bot.on("message", function(message) {
                 .catch(error => message.reply(`Je suis désoler ${message.author} Je ne pouvais pas mettre démmute mais à cause de : ${error}`)); //if error, display error
             message.reply(`${unmutedmember.user} a été découpé par ${message.author}!`); // sends a message saying he was kicked
             break;
-        case "oy":
+        case "oy1":
             const user = message.author.username
             let vote = args.slice(0).join(" ");
             message.channel.send(`${vote}`)
             .then(function (message) {
-              message.react("✅")
+              message.react("<>:")
               message.react("⛔")
              }).catch(function() {
           })
@@ -398,7 +416,7 @@ bot.on("message", function(message) {
             }).catch(console.error);
             break;
         case "invite":
-        message.channel.send('Invitez-moi sur votre serveur! https://discordapp.com/oauth2/authorize?&client_id=445641159235338240&scope=bot&permissions=8');
+        message.channel.send('Beni sunucunuza davet et! https://discordapp.com/oauth2/authorize?&client_id=445641159235338240&scope=bot&permissions=8');
           commandIssued = true;
             break;
         case "shop":
@@ -739,5 +757,4 @@ bot.on("message", function(message) {
             }
         }
     });
-
 bot.login(TOKEN);
