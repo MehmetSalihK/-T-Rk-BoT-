@@ -174,6 +174,7 @@ bot.on("message", function(message) {
 		.setColor(0x00ffff)
 		.setTitle("Emirlerin listesi:")
 		.addField("Mevcut listesini verecek", "-help")
+      		.addField("Admin yada Modlara ihtiyacınız olursa", "-yardimadmin")
 		.addField("Botun kaç tane ping olduğunu görün", "-ping")
 		.addField("Bu sunucunun kurallarına bakın", "-kurallar")
 		.addField("Kişisel bilgilerinizi bilin", "-info")
@@ -186,7 +187,7 @@ bot.on("message", function(message) {
 		.addField("Önemli konu söylemek ve herkesi etiketlemek için botu alacak (ADMIN)", "-önemli [Yazı]");
 		message.channel.send({embed}).then(d_msg => { d_msg.delete(9999); });
       break;
-      case "yardimadmin":
+      case "yardimadmincik":
          message.delete (30);
       var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
       var day = message.guild.createdAt.getDate()
@@ -198,6 +199,7 @@ bot.on("message", function(message) {
 		.setColor(0x00ffff)
 		.setTitle("Emirlerin listesi:")
 		.addField("Mevcut listesini verecek", "-help")
+      		.addField("Admin yada Modlara ihtiyacınız olursa", "-yardimadmin")
 		.addField("Botun kaç tane ping olduğunu görün", "-ping")
 		.addField("Bu sunucunun kurallarına bakın", "-kurallar")
 		.addField("Kişisel bilgilerinizi bilin", "-info")
@@ -265,6 +267,20 @@ bot.on("message", function(message) {
 		message.channel.send({embed})
 	}
          break;
+	case "yardimadmin":
+         message.delete (30);
+      var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
+      var day = message.guild.createdAt.getDate()
+      var month = 1 + message.guild.createdAt.getMonth()
+      var year = message.guild.createdAt.getFullYear()
+      var sicon = message.guild.iconURL;
+      var embed = new Discord.RichEmbed()
+      .setAuthor(message.guild.name, sicon)
+      .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/w0z6lI3.png")
+       .setColor(0x00ffff)
+ .addField("__```Yardım Edebilecek Kişiler```__", "<@174565176492687361> <@348463127354146816> <@363840664955518997>", true);
+      message.channel.sendMessage(embed).then(d_msg => { d_msg.delete(8990); });
+      break;
          case "roll":
          message.delete (30);
       var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
