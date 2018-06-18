@@ -88,13 +88,6 @@ bot.on("guildMemberAdd", function(member) {
     
     member.addRole(member.guild.roles.find("name", "YENI"));
 
-    member.guild.createRole({
-        name: member.user.username,
-        color: generateHex(),
-        permissions: []
-    }).then(function(role) {
-        member.addRole(role);
-    });
 });
 
 bot.on('guildCreate', (guild) => { // If the Bot was added on a server, proceed
