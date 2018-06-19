@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const YTDL = require("ytdl-core");
 
 
-const TOKEN = "NDQ1NjQxMTU5MjM1MzM4MjQw.Dd4pqg.NfRkOHpVrpb1EBJ7EuI4YYg5fuE";
+const TOKEN = "NDQ1NjQxMTU5MjM1MzM4MjQw.Dgsa4w.48hjeahGAxcopVri8U9Dg0kMULM";
 const ownerID = "174565176492687361"
 const PREFIX = "-";
 
@@ -86,8 +86,56 @@ bot.on('ready', () => {
 
 bot.on("guildMemberAdd", function(member) {
     
-    member.addRole(member.guild.roles.find("name", "YENI"));
+    member.addRole(member.guild.roles.find("name", "✓YENI✓"));
 
+});
+
+bot.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'admin-messajı');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField(':bust_in_silhouette: | Sunucumuza katılan kişi : ', `${member}`)
+        .addField(':microphone2: | Hoşgeldiniz!', `Sunucuya hoşgeldin, ${member}`)
+        .addField(':id: | Kullanıcı :', "**[" + `${member.id}` + "]**")
+        .addField(':family_mwgb: | Sunucumuzda ', `${member.guild.memberCount}` + "cu sıradasınız")
+        .addField("Isim", `<@` + `${member.id}` + `>`, true)
+        .addField('Sunucu', `${member.guild.name}`, true )
+        .setFooter("Yardım için [-yardim]", "https://imgur.com/w0z6lI3.png")
+        .setTimestamp()
+
+        channel.sendEmbed(embed);
+});
+
+bot.on('guildMemberAdd', member => {
+
+    console.log(`${member}`, "katıldı" + `${member.guild.name}`)
+
+});
+
+bot.on('guildMemberRemove', member => {
+    let channel = member.guild.channels.find('name', 'admin-messajı');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField('Isim:', `${member}`)
+        .addField('Neden ?', 'Hayırdır Laaaan kim uzdu seni')
+        .addField('Bye Bye :(', 'Yolun açık olsun kardeşim!')
+        .addField('Sunucuda şimdi', `${member.guild.memberCount}` + "kişi var")
+        .setFooter("Yardım için [-yardim]", "https://imgur.com/w0z6lI3.png")
+        .setTimestamp()
+
+        channel.sendEmbed(embed);
+});
+
+
+bot.on('guildMemberRemove', member => {
+    console.log(`${member}` + "ayrıldı" + `${member.guild.name}` + "Şimdi mesaj bırakın")
+    console.log("Mesajın Gönderildi")
 });
 
 bot.on('guildCreate', (guild) => { // If the Bot was added on a server, proceed
