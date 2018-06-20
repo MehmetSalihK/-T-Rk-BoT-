@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const YTDL = require("ytdl-core");
 
 
-const TOKEN = "NDQ1NjQxMTU5MjM1MzM4MjQw.Dgsa4w.48hjeahGAxcopVri8U9Dg0kMULM";
+const TOKEN = "NDU4NzgxMTM0NzMwNDI4NDE2.DgsrVg.RnmUk7ZYIZzGwszTrmTDbH2XzdM";
 const ownerID = "174565176492687361"
 const PREFIX = "-";
 
