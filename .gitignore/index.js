@@ -359,12 +359,12 @@ bot.on("message", function(message) {
             break;
         case "oynat":
             if (!args[1]) {
-                message.channel.sendMessage("S'il vous plaît fournir un lien");
+                message.channel.sendMessage("Lütfen bir oda'ya giriniz");
                 return;
             }
 
             if (!message.member.voiceChannel) {
-                message.channel.sendMessage("Vous devez être dans The Voice :)");
+                message.channel.sendMessage("Sesin içinde olmalısın :)");
                 return;
             }
 
