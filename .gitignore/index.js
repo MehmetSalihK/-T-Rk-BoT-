@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 
-const TOKEN = "NDU4NzgxMTM0NzMwNDI4NDE2.Dg5_dw.fo9JIfzMNOKSeDA3iIO4pYA3Ovo";
-const ownerID = "174565176492687361"
+const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.Dg693A.wN77bujGeKm2JS5MpIwbwyehF6k";
+const ownerID = "459765852531851264"
 const PREFIX = "-";
 
 function generateHex() {
