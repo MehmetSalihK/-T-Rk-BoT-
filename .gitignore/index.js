@@ -1,9 +1,7 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
 const YTDL = require("ytdl-core");
 
-
-const TOKEN = "NDU4NzgxMTM0NzMwNDI4NDE2.DgsrVg.RnmUk7ZYIZzGwszTrmTDbH2XzdM";
+const TOKEN = "NDU4NzgxMTM0NzMwNDI4NDE2.Dg5_dw.fo9JIfzMNOKSeDA3iIO4pYA3Ovo";
 const ownerID = "174565176492687361"
 const PREFIX = "-";
 
@@ -132,7 +130,6 @@ bot.on('guildMemberRemove', member => {
         channel.sendEmbed(embed);
 });
 
-
 bot.on('guildMemberRemove', member => {
     console.log(`${member}` + "ayrıldı" + `${member.guild.name}` + "Şimdi mesaj bırakın")
     console.log("Mesajın Gönderildi")
@@ -162,13 +159,9 @@ bot.on("message", function(message) {
 		message.channel.send(`Pong! Server pingi: ${Date.now() - message.createdTimestamp} ms`).then(d_msg => { d_msg.delete(9999); });
             break;
         case "info":
-            message.reply('avatarın '+message.author.avatarURL).then(d_msg => { d_msg.delete(8990); });
-            message.reply('kimliğin '+message.author.id).then(d_msg => { d_msg.delete(8990); });
-            message.reply('takma adın '+message.author.username).then(d_msg => { d_msg.delete(8990); });
-            break;
-        case "8ball":
-            if (args[1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
-            else message.channel.sendMessage("Je ne peux pas lire ça");
+        message.reply('avatarın '+message.author.avatarURL).then(d_msg => { d_msg.delete(8990); });
+        message.reply('kimliğin '+message.author.id).then(d_msg => { d_msg.delete(8990); });
+        message.reply('takma adın '+message.author.username).then(d_msg => { d_msg.delete(8990); });
             break;
          case "embed":
             var embed = new Discord.RichEmbed()
@@ -313,7 +306,7 @@ bot.on("message", function(message) {
  .addField("__```Yardım Edebilecek Kişiler```__", "<@174565176492687361> <@348463127354146816> <@363840664955518997>", true);
       message.channel.sendMessage(embed).then(d_msg => { d_msg.delete(8990); });
       break;
-            case "say":
+      case "say":
             message.delete()
 	if (message.member.hasPermission("ADMINISTRATOR")) {
         const embed = new Discord.RichEmbed()
@@ -337,33 +330,7 @@ bot.on("message", function(message) {
 	   .setThumbnail(message.author.avatarURL)
       message.channel.sendMessage(embed);
       break;
-      case "oy":
-         message.delete (30);
-         let args = message.content.split(" ").slice(1);
-         let thingToEcho = args.join(" ")
-         var embed = new Discord.RichEmbed()
-         .addField(thingToEcho, ":white_check_mark: veya :x: Ile yanıtla")
-         .setColor("0xB40404")
-         .setTimestamp()
-				message.channel.sendEmbed(embed)
-			.then(function (message){
-				message.react("✅")
-				message.react("⛔")
-			}).catch(function(){
-				
-            });
-            message.delete()
-			if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
-                message.channel.sendMessage("Üzgünüz, komutu yürütme izniniz yok");
-                console.log("Üzgünüz, komutu yürütme izniniz yok");
-                return;
-              } else if (!message.channel.permissionsFor(bot.user).hasPermission("MANAGE_MESSAGES")) {
-                message.channel.sendMessage("Üzgünüm, komutu yürütme iznim yok");
-                console.log("Üzgünüm, komutu yürütme iznim yok");
-                return;
-              }
-      break;
-         case "önemli":
+      case "önemli":
          message.delete()
          if (message.member.hasPermission("ADMINISTRATOR")) {
             const color = args[0]
@@ -390,9 +357,9 @@ bot.on("message", function(message) {
             message.member.guild.roles.find("name", "YENI").delete();
             message.channel.sendMessage("delet");
             break;
-        case "playst":
+        case "oynat":
             if (!args[1]) {
-                message.channel.sendMessage("Lütfen bir bağlantı sağlayın");
+                message.channel.sendMessage("S'il vous plaît fournir un lien");
                 return;
             }
 
@@ -413,7 +380,12 @@ bot.on("message", function(message) {
                 play(connection, message);
             });
             break;
-        case "kick":
+        case "gec":
+            var server = servers[message.guild.id];
+
+            if (server.dispatcher) server.dispatcher.end();
+            break;
+            case "kick":
             var kickedmember = message.mentions.members.first(); // sets the mentioned user to the var kickedmember
             if (!kickedmember) return message.reply("Lütfen bu sunucudan geçerli bir kişiden bahset!") // if there is no kickedmmeber var
             if (!kickedmember.kickable) return message.reply("Bu kişiyi tekmelemem!") // if the member is unkickable
@@ -425,12 +397,7 @@ bot.on("message", function(message) {
                 .catch(error => message.reply(`Üzgünüm @${message.author} seni tekmeleyemedim ama : ${error}`)); //if error, display error
             message.reply(`${kickedmember.user.username} tarafından atıldı ${message.author.username} cunku: ${kickreason}`); // sends a message saying he was kicked
             break;
-        case "skipst":
-            var server = servers[message.guild.id];
-
-            if (server.dispatcher) server.dispatcher.end();
-            break;
-        case "mute":
+            case "mute":
             if (!message.member.roles.some(r=>["🔲BoT-Admin🔲"].includes(r.name)) ) return message.reply("Désolé, vous n'avez pas la permission de le faire!"); // if author has no perms
             var mutedmember = message.mentions.members.first(); // sets the mentioned user to the var kickedmember
             if (!mutedmember) return message.reply("Veuillez mentionner un membre valide de ce serveur!") // if there is no kickedmmeber var
@@ -451,17 +418,7 @@ bot.on("message", function(message) {
                 .catch(error => message.reply(`Je suis désoler ${message.author} Je ne pouvais pas mettre démmute mais à cause de : ${error}`)); //if error, display error
             message.reply(`${unmutedmember.user} a été découpé par ${message.author}!`); // sends a message saying he was kicked
             break;
-        case "oy1":
-            const user = message.author.username
-            let vote = args.slice(0).join(" ");
-            message.channel.send(`${vote}`)
-            .then(function (message) {
-              message.react("<>:")
-              message.react("⛔")
-             }).catch(function() {
-          })
-            break;
-        case "purge":
+            case "purge":
             let messagecount = parseInt(args[1]) || 1;
     
             var deletedMessages = -1;
@@ -491,6 +448,7 @@ bot.on("message", function(message) {
         }
         
     });
+
 
     bot.on("message", (message) => {
 	
