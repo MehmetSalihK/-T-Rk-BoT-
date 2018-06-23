@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 
-const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.Dg693A.wN77bujGeKm2JS5MpIwbwyehF6k";
+const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhBBJQ.iI4g2HwJ3ocATgB6zSVWSa1Ng2s";
 const ownerID = "459765852531851264"
 const PREFIX = "-";
 
@@ -35,6 +35,7 @@ var servers = {};
 
 bot.on("ready", async () => {
 
+    bot.user.setUsername("☪TüRk-BoT☪");
 	console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 	bot.user.setActivity("-help", {type: "WATCHING"});
   
