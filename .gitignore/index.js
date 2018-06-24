@@ -24,7 +24,7 @@ bot.on("ready", async () => {
 
 bot.on("message", message => {
   if (message.content == "test") {
-        message.reply("bot cal");
+        message.reply("bot calışıyor");
   }
 });
 
