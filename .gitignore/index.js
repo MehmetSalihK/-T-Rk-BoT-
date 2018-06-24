@@ -1,33 +1,7 @@
 const Discord = require("discord.js");
-const YTDL = require("ytdl-core");
 
-const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhBBJQ.iI4g2HwJ3ocATgB6zSVWSa1Ng2s";
-const ownerID = "459765852531851264"
+const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhDwCg.oEp4JP2zagICLRcFgJSwF30fGA4";
 const PREFIX = "-";
-
-function generateHex() {
-    return "#" + Math.floor(Math.random() * 16777215).toString(16);
-}
-
-function play(connection, message) {
-    var server = servers[message.guild.id];
-
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-
-    server.queue.shift();
-
-    server.dispatcher.on("end", function() {
-        if (server.queue[0]) play(connection, message);
-        else connection.disconnect();
-    });
-}
-
-var fortunes = [
-    "Yes",
-    "No",
-    "Maybe",
-    "fucc u"
-];
 
 var bot = new Discord.Client();
 
@@ -39,6 +13,12 @@ bot.on("ready", async () => {
 	console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 	bot.user.setActivity("-help", {type: "WATCHING"});
   
+});
+
+bot.on("message", message => {
+  if (message.content == "test") {
+        message.reply("bot cal");
+  }
 });
 
 const CLEAR_MESSAGES = '-clearchat';
@@ -450,173 +430,7 @@ bot.on("message", function(message) {
         
     });
 
-
-    bot.on("message", (message) => {
-	
-        /*
-            Object message :
-            
-            - mentions.users = utilisateurs mentionnés
-            - author.username = auteur du message
-            - content = contenu du message
-            - createdTimestamp = timestamp du message
-            - member.guild.name = nom du serveur
-            - channel.name = nom du topic
-            - channel.topic = description du topic
-            - channel.guild.roles = rôles sur le serveur
-        */
-        
-        if(message.content.substring(0, 7) == "-report")
-        {
-            message.delete (30);
-            var commande = message.content.split(" ");
-            
-            if(typeof commande[1] === 'undefined')
-            {
-                if(message.author.bot === false)
-                {
-                    // Nom d'utilisateur pas entré = afficher l'aide
-                    message.reply("**Rapor siparişi için yardım :** \n\n Uygunsuz davranışa sahip bir veya daha fazla kullanıcıyı rapor etmek için, rapor komutundan sonra kullanıcıların adını veya adlarını koyun. \n\n belirli bir nedeni de ekleyebilirsiniz `-r:\"Sebeb\"`. \n\n Bu komutu tamamen kötüye kullanmayın, teşekkürler :wink: ! \n\n **Örnek 1 :** `!report @kullanıcı` \n **Örnek 2 :** `!report @kullanıcı1 @kullanıcı2` \n **Örnek 3 :** `!report @kullanıcı1 -r:\"Bir sebep\"`");
-                }
-            }
-            else
-            {
-                // Vérifier les noms + raison de signalement
-                var verifNom = true;
-                var raisonSignalement = null;
-                var inOptionRaison = false;
-                
-                for(var i = 1; i < commande.length; i++)
-                {
-                    // Les noms des personnes citées commencent par "<", le caractère suivant étant @
-                    if(commande[i].charAt(1) !== "@")
-                    {
-                        // On ne prend pas en compte l'option -r (raison)
-                        if(commande[i].substring(0, 4) == "-r:\"")
-                        {
-                            raisonSignalement = commande[i].substring(3);
-                            inOptionRaison = true;
-                        }
-                        else
-                        {
-                            if(inOptionRaison == false)
-                            {	
-                                verifNom = false;
-                            }
-                            else
-                            {
-                                raisonSignalement = raisonSignalement + " " + commande[i];
-                            }
-                        }
-                    }
-                }
-                
-                if(verifNom === true)
-                {
-                    // Vérification des abus
-                    var aAppele = false;
-                    for(var i = 0; i < dernierAppel.length; i++)
-                    {
-                        if(dernierAppel[i][0] == message.author.id)
-                        {
-                            // Un signalement toutes les 3 minutes autorisé
-                            if((message.createdTimestamp - dernierAppel[i][1]) < 180000)
-                            {
-                                aAppele = true;
-                            }
-                            else
-                            {
-                                aAppele = false;
-                                dernierAppel.splice(i, 1);
-                            }
-                        }
-                    }
-                    
-                    if(aAppele == false)
-                    {
-                        dernierAppel.push([message.author.id, message.createdTimestamp]);
-                        
-                        var moderateurs = new Array();
-                        
-                        var sontAvertis = true;
-                        
-                        message.channel.guild.roles.forEach(function(role)
-                        {
-                            // Chercher les modérateurs parmi tous les rôles
-                            
-                            if (role.hasPermission('BAN_MEMBERS'))
-                            {
-                                role.members.forEach(function(member)
-                                {
-                                    var estDejaPrevenu = false;
-                                    for(var j = 0; j < moderateurs.length; j++)
-                                    {
-                                        if(member == moderateurs[j])
-                                        {
-                                            // Est déjà prévenu
-                                            estDejaPrevenu = true;
-                                        }
-                                    }
-                                        
-                                    if(estDejaPrevenu == false)
-                                    {
-                                        moderateurs.push(member);
-                                    
-                                        // Fonction conversion timestamp -> Date
-                                        function timeConverter(timestamp)
-                                        {
-                                            var a = new Date(timestamp);
-                                            var tabMois = ['Janv.','Févr.','Mars','Avri.','Mai.','Juin','Juil.','Août','Sept.','Octo.','Nove.','Déce.'];
-                                            var yıl = a.getFullYear();
-                                            var ay = tabMois[a.getMonth()];
-                                            var tarih = a.getDate();
-                                            var saat = a.getHours();
-                                            var dakika = a.getMinutes();
-                                            var saniye = a.getSeconds();
-                                            var time = "le " + tarih + ' ' + ay + ' ' + yıl + ' à ' + saat + 'h' + dakika + ':' + saniye ;
-                                            return time;
-                                        }
-                                        
-                                        // Reporter les utilisateurs
-                                        var MP = "Gönderilen bir rapor " + timeConverter(message.createdTimestamp) + " tarafından **" + message.author.username + "** karşı yapıldı ";
-                                        
-                                        message.mentions.users.forEach(function(user)
-                                        {
-                                            MP = MP + "@" + user.username + " ";
-                                        });
-                                        
-                                        MP =  MP + "sur *" + member.guild.name + "/" + message.channel.name + "bot";
-                                        
-                                        // Prise en charge de la raison du signalement
-                                        if(raisonSignalement != null)
-                                        {
-                                            MP = MP + " aşağıdaki sebepten dolayı : *" + raisonSignalement + "bot";
-                                        }
-                                        
-                                        try
-                                        {
-                                            member.user.sendMessage(MP);
-                                        }
-                                        catch(e)
-                                        {
-                                            sontAvertis = false;
-                                        }
-                                    }
-                                });
-                            }
-                        });
-                        
-                        if(sontAvertis == true)
-                        {
-                            message.reply("Raporlama bitti :wink: !");
-                        }
-                    }
-                }
-            }
-        }
-    });
-
-    bot.on("message", (message) => {
+bot.on("message", (message) => {
 	
         /*
             Object message :
