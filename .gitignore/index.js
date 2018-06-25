@@ -163,7 +163,7 @@ bot.on("message", function(message) {
                 .setThumbnail(message.author.avatarURL)
             message.channel.sendMessage(embed);
             break;
-            case "kurallar":
+            case "kurallarsd":
             message.delete (30);
          var online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
          var day = message.guild.createdAt.getDate()
@@ -601,6 +601,38 @@ bot.on("message", (message) => {
             }
         }
     });
+
+bot.on("message", (message) => {
+        
+      if(message.content.substring(0, 7) == "-kurallar")
+      {
+        var commande = message.content.split(" ");
+        
+        if(typeof commande[1] === 'undefined')
+        {
+          if(message.author.bot === false)
+          {
+            message.reply("\n\n **📌⛔️KURALLAR⛔️**\n\n 📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍 \n\n :x:1. Üyelere karşı yazışırken ve konuşurken saygılı olun. Ağır ailevi küfürler etmekten kaçının. \n :x:2. Yazışırken spam ve flood yapmayın. Bu hızlı seviye atlamanıza değil banlanmanıza sebep olur. \n :x:3. Sesli konuşmalarda bağırarak konuşmayın. Garip sesler çıkararak diğer kişileri trollemeye çalışmayın. \n :x:4. Yöneticiler ile konuşurken saygılı olun. \n :x:5. Erotik ve pornografik fotoğraflar atmayın. Bu doğrudan banlanmanıza sebep olur. \n :x:6.Reklam yapmayın. (Kendi Discord sunucunuzun linki, Twitch yayınları ve diğer kişisel çıkar sağladığınız her türlü link reklama girmektedir) \n :x:7. Dini, siyasi konuşmadan uzak durun. Bu konular hakkında tartışma çıkarmayın. \n :x:8. Sesli sohbet odaları ne hakkındaysa onun hakkında konuşun. Mesela CS:GO odalarında bu oyunu oynuyorsanız veya o oyun hakkında konuşuyorsanız bulunun. Sohbet etmek için oyun odalarına girmeyin. \n :x:9. Eğer şarkı, video, fotoğraf, link,... paylaşmak isterseniz <#460671816650850304> || REAKLAM BAN! \n :x:10.Sunucuda üyeler arasında yapılan link ve program paylaşımında, bilgisayarınızda oluşabilecek problemlerden kullanıcılar sorumludur. Bu yolla program indiren kullanıcılar bir virüs tarama programını muhakkak kullanmalıdırlar. Aksi halde yönetim sorumluluk kabul etmez. \n :x:11.Mesaj yazarken büyük harf kullanmak bağırmak anlamına geleceği için kesinlikle büyük harf kullanarak yazı yazmayınız. \n\n 📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍 \n\n ⚠️ Kurallara uymayan bir üye ile karşılaştığınızda <@174565176492687361> <@348463127354146816> <@363840664955518997> etiketleyebilirsiniz. (Gereksiz yere kullanmayın) \n\n ❓ Kurallar arasında anlamadığınız bir madde varsa Discord sunucusuna katıldıktan sonra yöneticilere ve kurucuya sohbet odalarında sorabilir veya özelden mesaj atabilirsiniz. \n\n **`👉Kurallar güncellenebilir. İlginiz ve alakanız için tüm oyuncularımıza teşekkür ederiz.👈`**").then(d_msg => { d_msg.delete(3000); });
+          }
+        }
+      }
+    });
+
+      bot.on("message", (message) => {
+        
+        if(message.content.substring(0, 7) == "-kr")
+        {
+          var commande = message.content.split(" ");
+          
+          if(typeof commande[1] === 'undefined')
+          {
+            if(message.author.bot === false)
+            {
+              message.reply("\n\n **📌⛔️KURALLAR⛔️**\n\n 📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍 \n\n :x:1. Üyelere karşı yazışırken ve konuşurken saygılı olun. Ağır ailevi küfürler etmekten kaçının. \n :x:2. Yazışırken spam ve flood yapmayın. Bu hızlı seviye atlamanıza değil banlanmanıza sebep olur. \n :x:3. Sesli konuşmalarda bağırarak konuşmayın. Garip sesler çıkararak diğer kişileri trollemeye çalışmayın. \n :x:4. Yöneticiler ile konuşurken saygılı olun. \n :x:5. Erotik ve pornografik fotoğraflar atmayın. Bu doğrudan banlanmanıza sebep olur. \n :x:6.Reklam yapmayın. (Kendi Discord sunucunuzun linki, Twitch yayınları ve diğer kişisel çıkar sağladığınız her türlü link reklama girmektedir) \n :x:7. Dini, siyasi konuşmadan uzak durun. Bu konular hakkında tartışma çıkarmayın. \n :x:8. Sesli sohbet odaları ne hakkındaysa onun hakkında konuşun. Mesela CS:GO odalarında bu oyunu oynuyorsanız veya o oyun hakkında konuşuyorsanız bulunun. Sohbet etmek için oyun odalarına girmeyin. \n :x:9. Eğer şarkı, video, fotoğraf, link,... paylaşmak isterseniz <#460671816650850304> || REAKLAM BAN! \n :x:10.Sunucuda üyeler arasında yapılan link ve program paylaşımında, bilgisayarınızda oluşabilecek problemlerden kullanıcılar sorumludur. Bu yolla program indiren kullanıcılar bir virüs tarama programını muhakkak kullanmalıdırlar. Aksi halde yönetim sorumluluk kabul etmez. \n :x:11.Mesaj yazarken büyük harf kullanmak bağırmak anlamına geleceği için kesinlikle büyük harf kullanarak yazı yazmayınız. \n\n 📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍 \n\n ⚠️ Kurallara uymayan bir üye ile karşılaştığınızda <@174565176492687361> <@348463127354146816> <@363840664955518997> etiketleyebilirsiniz. (Gereksiz yere kullanmayın) \n\n ❓ Kurallar arasında anlamadığınız bir madde varsa Discord sunucusuna katıldıktan sonra yöneticilere ve kurucuya sohbet odalarında sorabilir veya özelden mesaj atabilirsiniz. \n\n **`👉Kurallar güncellenebilir. İlginiz ve alakanız için tüm oyuncularımıza teşekkür ederiz.👈`**");
+            }
+          }
+        }
+      });
 
 disco.on("message", message => {
     
