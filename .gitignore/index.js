@@ -648,12 +648,12 @@ disco.on("message", message => {
         }
 
         if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
-            message.channel.sendMessage("Üzgünüz, komutu yürütme izniniz yok \""+message.content+"\"");
-            console.log("Üzgünüz, komutu yürütme izniniz yok \""+message.content+"\"");
+            message.channel.sendMessage(" ");
+            console.log(" ");
             return;
           } else if (!message.channel.permissionsFor(bot.user).hasPermission("MANAGE_MESSAGES")) {
-            message.channel.sendMessage("Üzgünüm, komutu yürütme iznim yok \""+message.content+"\"");
-            console.log("Üzgünüm, komutu yürütme iznim yok \""+message.content+"\"");
+            message.channel.sendMessage(" ");
+            console.log(" ");
             return;
           }
       
