@@ -198,6 +198,7 @@ bot.on("message", function(message) {
         .addField("Mevcut listesini verecek", "-help")
         .addField("Admin yada Modlara ihtiyacınız olursa", "-yardimadmin")
 		.addField("Botun kaç tane ping olduğunu görün", "-ping")
+      		.addField("(Önce P.A.V.Y.O.N.L.A.N.D.I.K rol ekleyiniz)Rengli roll yapmanız için", "-startpavyon")
 		.addField("Bu sunucunun kurallarına bakın", "-kurallar")
 		.addField("Kişisel bilgilerinizi bilin", "-info")
 		.addField("Sunucu bilgisine bakın", "-serverinfo")
