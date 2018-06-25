@@ -4,7 +4,6 @@ const Discord = require('discord.js');
 const config = require('./config.json');
 const disco = new Discord.Client();
 const prefix = config.prefix;
-const allowedUsers = config.allowedUsers;
 const roles = config.roleToDisco;
 
 const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhEvVw.VizvMe7ve37Bms4P4rNTzFg6F-o";
@@ -649,23 +648,14 @@ disco.on("message", message => {
       }
     
       if(message.content.startsWith(prefix + "startpavyon")) {
-        if(allowedUsers.includes(message.author.id)) {
         setInterval(() => { discoRole(); }, config.ms);
         message.channel.sendMessage("```css\nPavyon Başlasın!...```");
-        message.channel.sendMessage(" ");
-      } else {
-        message.reply(` `);
-      }
     } else
     
     if(message.content.startsWith(prefix + "stoppavyon")) {
-      if(allowedUsers.includes(message.author.id)) {
       message.channel.sendMessage("Pavyon Bitti.");
       setTimeout(() => { console.log(process.exit(0)); }, 300);
-    } else {
-      message.reply(` `);
       }
-    }
     
     });
 
