@@ -198,13 +198,13 @@ bot.on("message", function(message) {
         .addField("Admin yada Modlara ihtiyacınız olursa", "-yardimadmin")
 		.addField("Botun kaç tane ping olduğunu görün", "-ping")
       		.addField(`(Önce 🔲BoT-Admin🔲 rol ekleyiniz)Birini kick lemek icin", "-kick @user1'sebep'`)
-      		.addField("(Önce P.A.V.Y.O.N.L.A.N.D.I.K rol ekleyiniz)Rengli roll yapmanız için", "-startpavyon")
 		.addField("Bu sunucunun kurallarına bakın", "-kurallar")
 		.addField("Kişisel bilgilerinizi bilin", "-info")
 		.addField("Sunucu bilgisine bakın", "-serverinfo")
 		.addField("Rollerini gör", "-roll")
 		.addField("Muzik için", "-turkplay [URL/ADI]")
 		.addField("Birisine rapor et", "-report")
+      		.addField("(Önce P.A.V.Y.O.N.L.A.N.D.I.K rol ekleyiniz)Rengli roll yapmanız için (ADMIN)", "-startpavyon")
 		.addField("Chat'i sil (ADMIN)", "-clearchat")
 		.addField("Bot bir şey söyler (ADMIN)", "-say [Yazı]")
 		.addField("Önemli konu söylemek ve herkesi etiketlemek için botu alacak (ADMIN)", "-önemli [Yazı]");
@@ -637,29 +637,38 @@ bot.on("message", (message) => {
 
 disco.on("message", message => {
     
-      function discoRole() {
-        let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-        roles.forEach((role) => {
-          let theRole = message.guild.roles.find("name", role);
-          theRole.edit({color: random}).catch(e => {
-            return message.channel.sendMessage(":x: **Error:** Belirttiğiniz rol `config.json` bu sunucuda bir rol değil, veya onun sahip olduğum en yüksek rolden daha yüksek bir rolü.");
+        function discoRole() {
+          let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+          roles.forEach((role) => {
+            let theRole = message.guild.roles.find("name", role);
+            theRole.edit({color: random}).catch(e => {
+              return message.channel.sendMessage(":x: **Error:** Belirttiğiniz rol `config.json` bu sunucuda bir rol değil, veya onun sahip olduğum en yüksek rolden daha yüksek bir rolü.");
+            });
           });
-        });
-      }
-    
-      if(message.content.startsWith(prefix + "startpavyon")) {
-        setInterval(() => { discoRole(); }, config.ms);
-        message.channel.sendMessage("```css\nPavyon Başlasın!...```");
-    } else
-    
-    if(message.content.startsWith(prefix + "stoppavyon")) {
-      message.channel.sendMessage("Pavyon Bitti.");
-      setTimeout(() => { console.log(process.exit(0)); }, 300);
-      }
-    
-    });
+        }
 
-    disco.login(config.token);
-disco.login(config.token);
-
+        if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
+            message.channel.sendMessage("Üzgünüz, komutu yürütme izniniz yok \""+message.content+"\"");
+            console.log("Üzgünüz, komutu yürütme izniniz yok \""+message.content+"\"");
+            return;
+          } else if (!message.channel.permissionsFor(bot.user).hasPermission("MANAGE_MESSAGES")) {
+            message.channel.sendMessage("Üzgünüm, komutu yürütme iznim yok \""+message.content+"\"");
+            console.log("Üzgünüm, komutu yürütme iznim yok \""+message.content+"\"");
+            return;
+          }
+      
+        if(message.content.startsWith(prefix + "startpavyon")) {
+          setInterval(() => { discoRole(); }, config.ms);
+          message.channel.sendMessage("```css\nPavyon Başlasın!...```");
+      } else
+      
+      if(message.content.startsWith(prefix + "stoppavyon")) {
+        message.channel.sendMessage("Pavyon Bitti.");
+        setTimeout(() => { console.log(process.exit(0)); }, 300);
+        }
+      
+      });
+  
+      disco.login(config.token);
+  disco.login(config.token);
 bot.login(TOKEN);
