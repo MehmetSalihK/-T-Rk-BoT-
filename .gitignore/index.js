@@ -6,7 +6,7 @@ const disco = new Discord.Client();
 const prefix = config.prefix;
 const roles = config.roleToDisco;
 
-const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhN-Ig.I4bqy5UUSelg7Jwpr-9Idqh7Q5I";
+const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhN77w.xTdZqJY5GtA-ObnS5aNlmOjfspg";
 const PREFIX = "-";
 
 var bot = new Discord.Client();
@@ -26,6 +26,13 @@ bot.on("message", message => {
         message.reply("bot calışıyor");
   }
 });
+
+bot.on("message", message => {
+    if (message.content == "-kurallar") {
+        message.delete (30);
+          message.reply("\n\n **📌⛔️KURALLAR⛔️**\n\n 📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍 \n\n :x:1. Üyelere karşı yazışırken ve konuşurken saygılı olun. Ağır ailevi küfürler etmekten kaçının. \n :x:2. Yazışırken spam ve flood yapmayın. Bu hızlı seviye atlamanıza değil banlanmanıza sebep olur. \n :x:3. Sesli konuşmalarda bağırarak konuşmayın. Garip sesler çıkararak diğer kişileri trollemeye çalışmayın. \n :x:4. Yöneticiler ile konuşurken saygılı olun. \n :x:5. Erotik ve pornografik fotoğraflar atmayın. Bu doğrudan banlanmanıza sebep olur. \n :x:6.Reklam yapmayın. (Kendi Discord sunucunuzun linki, Twitch yayınları ve diğer kişisel çıkar sağladığınız her türlü link reklama girmektedir) \n :x:7. Dini, siyasi konuşmadan uzak durun. Bu konular hakkında tartışma çıkarmayın. \n :x:8. Sesli sohbet odaları ne hakkındaysa onun hakkında konuşun. Mesela CS:GO odalarında bu oyunu oynuyorsanız veya o oyun hakkında konuşuyorsanız bulunun. Sohbet etmek için oyun odalarına girmeyin. \n :x:9.Sunucuda üyeler arasında yapılan link ve program paylaşımında, bilgisayarınızda oluşabilecek problemlerden kullanıcılar sorumludur. Bu yolla program indiren kullanıcılar bir virüs tarama programını muhakkak kullanmalıdırlar. Aksi halde yönetim sorumluluk kabul etmez. \n :x:10.Mesaj yazarken büyük harf kullanmak bağırmak anlamına geleceği için kesinlikle büyük harf kullanarak yazı yazmayınız. \n\n 📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍 \n\n ⚠️ Kurallara uymayan bir üye ile karşılaştığınızda @Yönetici etiketleyebilirsiniz. (Gereksiz yere kullanmayın) \n\n ❓ Kurallar arasında anlamadığınız bir madde varsa Discord sunucusuna katıldıktan sonra yöneticilere ve kurucuya sohbet odalarında sorabilir veya özelden mesaj atabilirsiniz. \n\n **`👉Kurallar güncellenebilir. İlginiz ve alakanız için tüm oyuncularımıza teşekkür ederiz.👈`**").then(d_msg => { d_msg.delete(3000); });
+    }
+  });
 
 const CLEAR_MESSAGES = '-clearchat';
 
@@ -71,7 +78,7 @@ bot.on('ready', () => {
 
 bot.on("guildMemberAdd", function(member) {
     
-    member.addRole(member.guild.roles.find("name", "🌟·.¸¸.HüSeYN·.¸¸.·🌟"));
+    member.addRole(member.guild.roles.find("name", "✓YENI✓"));
 
 });
 
@@ -320,7 +327,7 @@ bot.on("message", function(message) {
       message.channel.sendMessage(embed);
       break;
       case "önemli":
-         message.delete()
+      message.delete (30);
          if (message.member.hasPermission("ADMINISTRATOR")) {
             const color = args[0]
                  
@@ -603,25 +610,10 @@ bot.on("message", (message) => {
         }
     });
 
-bot.on("message", (message) => {
-        
-      if(message.content.substring(0, 7) == "-kurallar")
-      {
-        var commande = message.content.split(" ");
-        
-        if(typeof commande[1] === 'undefined')
-        {
-          if(message.author.bot === false)
-          {
-            message.reply("\n\n **📌⛔️KURALLAR⛔️**\n\n 📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍 \n\n :x:1. Üyelere karşı yazışırken ve konuşurken saygılı olun. Ağır ailevi küfürler etmekten kaçının. \n :x:2. Yazışırken spam ve flood yapmayın. Bu hızlı seviye atlamanıza değil banlanmanıza sebep olur. \n :x:3. Sesli konuşmalarda bağırarak konuşmayın. Garip sesler çıkararak diğer kişileri trollemeye çalışmayın. \n :x:4. Yöneticiler ile konuşurken saygılı olun. \n :x:5. Erotik ve pornografik fotoğraflar atmayın. Bu doğrudan banlanmanıza sebep olur. \n :x:6.Reklam yapmayın. (Kendi Discord sunucunuzun linki, Twitch yayınları ve diğer kişisel çıkar sağladığınız her türlü link reklama girmektedir) \n :x:7. Dini, siyasi konuşmadan uzak durun. Bu konular hakkında tartışma çıkarmayın. \n :x:8. Sesli sohbet odaları ne hakkındaysa onun hakkında konuşun. Mesela CS:GO odalarında bu oyunu oynuyorsanız veya o oyun hakkında konuşuyorsanız bulunun. Sohbet etmek için oyun odalarına girmeyin. \n :x:9.Sunucuda üyeler arasında yapılan link ve program paylaşımında, bilgisayarınızda oluşabilecek problemlerden kullanıcılar sorumludur. Bu yolla program indiren kullanıcılar bir virüs tarama programını muhakkak kullanmalıdırlar. Aksi halde yönetim sorumluluk kabul etmez. \n :x:10.Mesaj yazarken büyük harf kullanmak bağırmak anlamına geleceği için kesinlikle büyük harf kullanarak yazı yazmayınız. \n\n 📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍📍 \n\n ⚠️ Kurallara uymayan bir üye ile karşılaştığınızda @Yönetici etiketleyebilirsiniz. (Gereksiz yere kullanmayın) \n\n ❓ Kurallar arasında anlamadığınız bir madde varsa Discord sunucusuna katıldıktan sonra yöneticilere ve kurucuya sohbet odalarında sorabilir veya özelden mesaj atabilirsiniz. \n\n **`👉Kurallar güncellenebilir. İlginiz ve alakanız için tüm oyuncularımıza teşekkür ederiz.👈`**").then(d_msg => { d_msg.delete(3000); });
-          }
-        }
-      }
-    });
-
       bot.on("message", (message) => {
         
         if(message.content.substring(0, 7) == "-kr")
+        message.delete (30);
         {
           var commande = message.content.split(" ");
           
@@ -647,11 +639,13 @@ bot.on("message", (message) => {
         }
       
         if(message.content.startsWith(prefix + "startpavyon")) {
+            message.delete (30);
           setInterval(() => { discoRole(); }, config.ms);
           message.channel.sendMessage("```css\nPavyon Başlasın!...```");
       } else
       
       if(message.content.startsWith(prefix + "stoppavyon")) {
+        message.delete (30);
         message.channel.sendMessage("Pavyon Bitti.");
         setTimeout(() => { console.log(process.exit(0)); }, 300);
         }
