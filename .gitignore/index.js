@@ -80,7 +80,7 @@ bot.on('ready', () => {
 
 bot.on("guildMemberAdd", function(member) {
     
-    member.addRole(member.guild.roles.find("name", "✓YENI✓"));
+    member.addRole(member.guild.roles.find("name", "✓YENI✓"))
     member.addRole(member.guild.roles.find("name", "TÜRK|DISCO"));
 
 });
