@@ -287,7 +287,7 @@ bot.on("message", function(message) {
   .setTimestamp()
   .setURL("https://imgur.com/ASDHxjF.png")
   .addField("__```Davet ☪TüRk-BoT☪:```__",
-	"https://goo.gl/hWnvSc")
+	"https://goo.gl/YcNLSQ")
     .addField("__```Serverumuza katıl:```__", "https://goo.gl/eyLuNc", true);
          message.channel.sendMessage(embed).then(d_msg => { d_msg.delete(8990); });
          break;
