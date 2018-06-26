@@ -646,16 +646,6 @@ disco.on("message", message => {
             });
           });
         }
-
-        if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
-            message.channel.sendMessage(" ");
-            console.log(" ");
-            return;
-          } else if (!message.channel.permissionsFor(bot.user).hasPermission("MANAGE_MESSAGES")) {
-            message.channel.sendMessage(" ");
-            console.log(" ");
-            return;
-          }
       
         if(message.content.startsWith(prefix + "startpavyon")) {
           setInterval(() => { discoRole(); }, config.ms);
