@@ -6,7 +6,7 @@ const disco = new Discord.Client();
 const prefix = config.prefix;
 const roles = config.roleToDisco;
 
-const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhEvVw.VizvMe7ve37Bms4P4rNTzFg6F-o";
+const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhNCyg.lrFYf29_FpFDiKRgEiuMRAFRzbA";
 const PREFIX = "-";
 
 var bot = new Discord.Client();
