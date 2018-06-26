@@ -6,7 +6,7 @@ const disco = new Discord.Client();
 const prefix = config.prefix;
 const roles = config.roleToDisco;
 
-const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhN0hw.xl8l79BbTsd_w_nyE1lcYSgirXg";
+const TOKEN = "NDU5NzY1ODUyNTMxODUxMjY0.DhN-Ig.I4bqy5UUSelg7Jwpr-9Idqh7Q5I";
 const PREFIX = "-";
 
 var bot = new Discord.Client();
@@ -71,7 +71,7 @@ bot.on('ready', () => {
 
 bot.on("guildMemberAdd", function(member) {
     
-    member.addRole(member.guild.roles.find("name", "✓YENI✓"));
+    member.addRole(member.guild.roles.find("name", "🌟·.¸¸.HüSeYN·.¸¸.·🌟"));
 
 });
 
@@ -198,13 +198,13 @@ bot.on("message", function(message) {
         .addField("Admin yada Modlara ihtiyacınız olursa", "-yardimadmin")
 		.addField("Botun kaç tane ping olduğunu görün", "-ping")
       		.addField(`(Önce 🔲BoT-Admin🔲 rol ekleyiniz)Birini kick lemek icin", "-kick @user1'sebep'`)
+      		.addField("(Önce P.A.V.Y.O.N.L.A.N.D.I.K rol ekleyiniz)Rengli roll yapmanız için", "-startpavyon")
 		.addField("Bu sunucunun kurallarına bakın", "-kurallar")
 		.addField("Kişisel bilgilerinizi bilin", "-info")
 		.addField("Sunucu bilgisine bakın", "-serverinfo")
 		.addField("Rollerini gör", "-roll")
 		.addField("Muzik için", "-turkplay [URL/ADI]")
 		.addField("Birisine rapor et", "-report")
-      		.addField("(Önce P.A.V.Y.O.N.L.A.N.D.I.K rol ekleyiniz)Rengli roll yapmanız için (ADMIN)", "-startpavyon")
 		.addField("Chat'i sil (ADMIN)", "-clearchat")
 		.addField("Bot bir şey söyler (ADMIN)", "-say [Yazı]")
 		.addField("Önemli konu söylemek ve herkesi etiketlemek için botu alacak (ADMIN)", "-önemli [Yazı]");
@@ -635,8 +635,7 @@ bot.on("message", (message) => {
         }
       });
 
-disco.on("message", message => {
-    
+      disco.on("message", message => {    
         function discoRole() {
           let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
           roles.forEach((role) => {
@@ -661,4 +660,5 @@ disco.on("message", message => {
   
       disco.login(config.token);
   disco.login(config.token);
+
 bot.login(TOKEN);
