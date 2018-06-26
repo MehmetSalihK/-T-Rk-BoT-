@@ -206,8 +206,8 @@ bot.on("message", function(message) {
         .addField("Mevcut listesini verecek", "-help")
         .addField("Admin yada Modlara ihtiyacınız olursa", "-yardimadmin")
 		.addField("Botun kaç tane ping olduğunu görün", "-ping")
-      		.addField(`(Önce 🔲BoT-Admin🔲 rol ekleyiniz)Birini kick lemek icin", "-kick @user1'sebep'`)
-      		.addField("(Önce P.A.V.Y.O.N.L.A.N.D.I.K rol ekleyiniz)Rengli roll yapmanız için", "-startpavyon")
+      		.addField(`"(Önce 🔲BoT-Admin🔲 rol ekleyiniz)Birini kick lemek icin", "-kick @user1'sebep'"`)
+      		.addField("(Önce TÜRK|DISCO rol ekleyiniz)Rengli roll yapmanız için", "-startdisco")
 		.addField("Bu sunucunun kurallarına bakın", "-kurallar")
 		.addField("Kişisel bilgilerinizi bilin", "-info")
 		.addField("Sunucu bilgisine bakın", "-serverinfo")
@@ -301,7 +301,7 @@ bot.on("message", function(message) {
       .setAuthor(message.guild.name, sicon)
       .setFooter(` Yardım için [-yardim] • ${day}.${month}.${year} `, "https://imgur.com/w0z6lI3.png")
        .setColor(0x00ffff)
- .addField("__```Yardım Edebilecek Kişiler```__", "<@174565176492687361> <@348463127354146816> <@363840664955518997>", true);
+ .addField("__```Yardım Edebilecek Kişiler```__", "<@174565176492687361> <@348463127354146816> <@363840664955518997> <@414384267053891595>", true);
       message.channel.sendMessage(embed).then(d_msg => { d_msg.delete(8990); });
       break;
       case "say":
@@ -639,15 +639,15 @@ bot.on("message", (message) => {
           });
         }
       
-        if(message.content.startsWith(prefix + "startpavyon")) {
+        if(message.content.startsWith(prefix + "startdisco")) {
             message.delete (30);
           setInterval(() => { discoRole(); }, config.ms);
-          message.channel.sendMessage("```css\nPavyon Başlasın!...```");
+          message.channel.sendMessage("```css\nTÜRK DISCO Başlasın!...```");
       } else
       
-      if(message.content.startsWith(prefix + "stoppavyon")) {
+      if(message.content.startsWith(prefix + "stopdisco")) {
         message.delete (30);
-        message.channel.sendMessage("Pavyon Bitti.");
+        message.channel.sendMessage("TÜRK DISCO Bitmiştir.");
         setTimeout(() => { console.log(process.exit(0)); }, 300);
         }
       
