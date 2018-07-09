@@ -3,7 +3,7 @@
 MehmetSalihK#4271 tarafından yeni bir eğlence botu!
 
 [![Discord](https://discordapp.com/api/guilds/445631215756902411/embed.png)](https://discord.gg/qpuGfTb)
-[![Discord](https://discordapp.com/widget?id=445631215756902411&theme=dark)](https://discord.gg/qpuGfTb)
+https://discordapp.com/widget?id=445631215756902411&theme=dark
 
 ## Davet etmek
 
